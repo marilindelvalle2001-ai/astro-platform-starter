@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reflexiones Filosófico-Éticas</title>
+  <meta name="description" content="Blog sobre Filosofía, Ética y Moral. Definiciones, desarrollos y comparaciones para estudiantes y curiosos." />
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7; /* soft green */
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1000px;
+      --radius:14px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071022 0%, #051021 60%); color:#e6eef6}
+    a{color:var(--accent); text-decoration:none}
+    .container{max-width:var(--maxw);margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#0ea5a9,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#051021}
+    h1{font-size:1.6rem;margin:0}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    nav{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+    .navbtn{background:var(--glass);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:10px;cursor:pointer}
+    .navbtn.active{background:linear-gradient(90deg, rgba(110,231,183,0.08), rgba(124,58,237,0.04));border:1px solid rgba(110,231,183,0.12)}
+    main{margin-top:22px;display:grid;grid-template-columns:1fr 320px;gap:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .content h2{margin-top:0}
+    .toc{position:sticky;top:28px}
+    .small{color:var(--muted);font-size:0.95rem}
+    blockquote{border-left:3px solid rgba(110,231,183,0.18);padding-left:12px;color:var(--muted);margin:12px 0;font-style:italic}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02);font-size:0.85rem}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    pre{background:#031022;padding:12px;border-radius:8px;overflow:auto}
+    /* responsive */
+    @media (max-width:900px){main{grid-template-columns:1fr} .toc{position:relative;top:auto}}
+    /* simple hero */
+    .hero{display:flex;gap:18px;align-items:center;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(7,18,34,0.6), rgba(5,16,33,0.4));border:1px solid rgba(255,255,255,0.02)}
+    .btn-primary{background:linear-gradient(90deg,#10b981,#7c3aed);padding:10px 14px;border-radius:10px;color:#021426;border:none;cursor:pointer}
+    .muted{color:var(--muted)}
+    .quote-author{display:block;margin-top:8px;color:var(--muted);font-weight:600}
+    .contact-form input, .contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-top:8px}
+    .contact-form button{margin-top:10px}
+    .footer-links{display:flex;gap:12px;justify-content:center;margin-top:8px}
+    .accent-underline{background:linear-gradient(90deg,#6ee7b7,#7c3aed);-webkit-background-clip:text;background-clip:text;color:transparent}
+    /* small utility */
+    .muted-block{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RF</div>
+        <div>
+          <h1>Reflexiones Filosófico-Éticas</h1>
+          <p class="lead">Un espacio para pensar la Filosofía, la Ética y la Moral con claridad y ejemplos prácticos.</p>
+        </div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+        <button class="btn-primary" onclick="openSection('inicio')">Abrir blog</button>
+      </div>
+    </header>
+
+    <nav id="nav">
+      <button class="navbtn active" data-target="inicio">Inicio</button>
+      <button class="navbtn" data-target="filosofia">Filosofía</button>
+      <button class="navbtn" data-target="etica">Ética</button>
+      <button class="navbtn" data-target="moral">Moral</button>
+      <button class="navbtn" data-target="diferencias">Diferencias</button>
+      <button class="navbtn" data-target="contacto">Contacto</button>
+    </nav>
+
+    <main>
+      <section class="card content" id="inicio">
+        <div class="hero">
+          <div style="flex:1">
+            <h2>Bienvenido</h2>
+            <p class="small">Este blog propone definiciones claras y desarrollos prácticos sobre tres conceptos centrales: <strong>Filosofía</strong>, <strong>Ética</strong> y <strong>Moral</strong>. Usa el menú para navegar entre las secciones o desplázate hacia abajo.</p>
+            <p class="muted">Diseñado para estudiantes y lectores que buscan una introducción crítica y accesible.</p>
+            <div style="margin-top:12px">
+              <span class="tag">Artículos</span>
+              <span class="tag">Comparaciones</span>
+              <span class="tag">Ejemplos</span>
+            </div>
+          </div>
+          <div style="width:160px;text-align:right">
+            <blockquote>
+              "La filosofía comienza con la admiración."<span class="quote-author">— Aristóteles</span>
+            </blockquote>
+          </div>
+        </div>
+
+        <h3 style="margin-top:18px">Últimos artículos</h3>
+        <article style="margin-top:12px">
+          <h4>¿Qué es la Filosofía?</h4>
+          <p class="muted">Una introducción a la reflexión sobre el ser, el conocimiento y los valores.</p>
+        </article>
+        <article style="margin-top:8px">
+          <h4>Ética práctica: principios para la vida</h4>
+          <p class="muted">Principios básicos y dilemas que surgen en la vida profesional y personal.</p>
+        </article>
+
+      </section>
+
+      <aside class="card toc">
+        <h3>Índice</h3>
+        <ul style="list-style:none;padding:0;margin:8px 0 0">
+          <li><a href="#" onclick="openSection('filosofia')">Filosofía — definición y ramas</a></li>
+          <li><a href="#" onclick="openSection('etica')">Ética — teorías y aplicaciones</a></li>
+          <li><a href="#" onclick="openSection('moral')">Moral — normas y cultura</a></li>
+          <li><a href="#" onclick="openSection('diferencias')">Comparaciones</a></li>
+        </ul>
+
+        <div style="margin-top:14px" class="muted-block">
+          <strong>Autor:</strong> Reflexiones Filosófico-Éticas<br>
+          <span class="small">Última actualización: 06 octubre 2025</span>
+        </div>
+      </aside>
+
+      <!-- Filosofía -->
+      <section class="card content" id="filosofia" style="display:none">
+        <h2>Filosofía</h2>
+        <p class="small">La filosofía es la reflexión racional y sistemática sobre los problemas fundamentales de la realidad, el conocimiento, el sentido de la vida y los principios que orientan nuestra existencia.</p>
+
+        <h3>Ramas principales</h3>
+        <ul>
+          <li><strong>Metafísica:</strong> la naturaleza del ser y de lo real.</li>
+          <li><strong>Epistemología:</strong> estudio del conocimiento y sus límites.</li>
+          <li><strong>Lógica:</strong> normas y estructuras del razonamiento correcto.</li>
+          <li><strong>Ética:</strong> reflexión sobre la acción y el valor moral.</li>
+          <li><strong>Estética:</strong> lo bello, el arte y la experiencia estética.</li>
+        </ul>
+
+        <h3>Métodos filosóficos</h3>
+        <p>Argumentación rigurosa, análisis conceptual, diálogo crítico y cuestionamiento de supuestos.</p>
+
+        <h3>Fines y relevancia práctica</h3>
+        <p>La filosofía proporciona herramientas para pensar con claridad, para criticar ideologías y para orientar decisiones éticas y políticas de manera fundamentada.</p>
+
+        <blockquote>“La filosofía comienza con la admiración.” — Aristóteles</blockquote>
+      </section>
+
+      <!-- Ética -->
+      <section class="card content" id="etica" style="display:none">
+        <h2>Ética</h2>
+        <p class="small">La ética se ocupa de los principios que guían lo que es correcto o incorrecto en la acción humana. Forma parte de la filosofía práctica y tiene implicaciones en lo personal, profesional y social.</p>
+
+        <h3>Principios éticos fundamentales</h3>
+        <ul>
+          <li><strong>Autonomía:</strong> respeto por la capacidad de decisión de cada persona.</li>
+          <li><strong>Justicia:</strong> trato equitativo y reconocimiento de derechos.</li>
+          <li><strong>Beneficencia y no maleficencia:</strong> promover el bien y evitar el daño.</li>
+          <li><strong>Responsabilidad:</strong> atender las consecuencias de nuestras acciones.</li>
+        </ul>
+
+        <h3>Teorías éticas</h3>
+        <div class="compare">
+          <div>
+            <h4>Deontología</h4>
+            <p>Afirma que ciertos actos son correctos o incorrectos por sí mismos, independientemente de sus consecuencias (ej. Kant).</p>
+          </div>
+          <div>
+            <h4>Consecuencialismo</h4>
+            <p>Valora las acciones según sus consecuencias; el utilitarismo busca el mayor bien para el mayor número.</p>
+          </div>
+        </div>
+
+        <h3>Aplicaciones</h3>
+        <p>Ética profesional, bioética, ética ambiental y ética pública son ámbitos donde aplicar principios y resolver dilemas.</p>
+
+        <blockquote>“Obra de tal modo que trates a la humanidad... siempre como un fin y nunca simplemente como un medio.” — Immanuel Kant</blockquote>
+      </section>
+
+      <!-- Moral -->
+      <section class="card content" id="moral" style="display:none">
+        <h2>Moral</h2>
+        <p class="small">La moral es el conjunto de normas, valores y prácticas que una comunidad o individuo considera correctas en un lugar y tiempo determinados.</p>
+
+        <h3>Características</h3>
+        <ul>
+          <li><strong>Contextual y cultural:</strong> cambia con la historia y la sociedad.</li>
+          <li><strong>Valores y normas:</strong> los valores son ideales; las normas regulan la conducta.</li>
+          <li><strong>Transmisión:</strong> familia, educación, religión y medios transmiten la moral.</li>
+        </ul>
+
+        <h3>Tensión entre moral y ética</h3>
+        <p>La moral práctica puede entrar en conflicto con reflexiones éticas más universales; por eso es importante la crítica y la revisión.</p>
+
+        <h3>Ejemplos</h3>
+        <ul>
+          <li>Una norma moral: "No mentir" en la convivencia cotidiana.</li>
+          <li>Una revisión ética: cuando mentir evita un daño mayor, es preciso evaluar el conflicto.</li>
+        </ul>
+      </section>
+
+      <!-- Diferencias -->
+      <section class="card content" id="diferencias" style="display:none">
+        <h2>Diferencias clave: Filosofía, Ética y Moral</h2>
+        <p class="small">Resumen comparativo para aclarar términos que suelen confundirse.</p>
+        <div style="margin-top:12px">
+          <table style="width:100%;border-collapse:collapse">
+            <tr style="text-align:left;font-weight:700;color:var(--muted)"><td>Concepto</td><td>Qué hace</td><td>Ejemplo</td></tr>
+            <tr><td>Filosofía</td><td>Reflexiona sobre fundamentos del saber y la existencia</td><td>Preguntar qué es la verdad</td></tr>
+            <tr><td>Ética</td><td>Establece criterios racionales para la acción</td><td>Debatir si es justo mentir para salvar vidas</td></tr>
+            <tr><td>Moral</td><td>Conjunto de normas/prácticas de una sociedad</td><td>La costumbre de saludar al entrar a un hogar</td></tr>
+          </table>
+        </div>
+
+        <h3 style="margin-top:12px">Conclusión</h3>
+        <p>La filosofía brinda el marco crítico; la ética ofrece teorías y principios; la moral representa las prácticas y normas. Juntas permiten una vida más reflexiva y coherente.</p>
+      </section>
+
+      <!-- Contacto -->
+      <section class="card content" id="contacto" style="display:none">
+        <h2>Contacto</h2>
+        <p class="small">¿Comentarios, sugerencias o dudas? Escribe aquí un mensaje (esto es un formulario ficticio para demostración).</p>
+        <form class="contact-form" onsubmit="fakeSend(event)">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre" required />
+          <label>Correo</label>
+          <input type="email" placeholder="tuemail@ejemplo.com" required />
+          <label>Mensaje</label>
+          <textarea rows="5" placeholder="Escribe tu mensaje" required></textarea>
+          <button class="btn-primary" type="submit">Enviar</button>
+        </form>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">© Reflexiones Filosófico-Éticas — Hecho con ♥ — Plantilla simple para Netlify/GitHub Pages</div>
+      <div class="footer-links"><a href="#" onclick="openSection('diferencias')">Diferencias</a><a href="#" onclick="openSection('contacto')">Contacto</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // simple SPA navigation
+    const nav = document.getElementById('nav');
+    nav.addEventListener('click', e => {
+      if(e.target.matches('.navbtn')){
+        document.querySelectorAll('.navbtn').forEach(b=>b.classList.remove('active'));
+        e.target.classList.add('active');
+        openSection(e.target.dataset.target);
+      }
+    });
+    function openSection(id){
+      const sections = ['inicio','filosofia','etica','moral','diferencias','contacto'];
+      sections.forEach(s=>{
+        const el = document.getElementById(s);
+        if(!el) return;
+        el.style.display = (s===id)?'block':'none';
+      });
+      // update active nav
+      document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    // fake form
+    function fakeSend(e){
+      e.preventDefault();
+      alert('Gracias — este formulario es de demostración. Para recibir mensajes reales configura un backend o un servicio de formularios.');
+    }
+    // open default
+    openSection('inicio');
+  </script>
+</body>
+</html>
